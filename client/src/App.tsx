@@ -1,34 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import reactLogo from "./assets/react.svg";
+import "./reset.css";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [jpgs, setJpgs] = useState([]);
+  const serverRoot = "http://localhost:3002";
+
+  useEffect(() => {
+    setInterval(() => {
+      fetch("//localhost:3002/jpgs.json").then((resp) => {
+        resp.json().then((json) => {
+          setJpgs(json);
+        });
+      });
+    }, 1000);
+  }, []);
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <>
+      <div className="App">
+        <div className="gallery">
+          {jpgs.map((jpg) => {
+            return <img src={`${serverRoot}/images/tn/${jpg}`} />;
+          })}
+        </div>
+        <div className="viewer">
+          <img src={`${serverRoot}/images/lg/${jpgs[jpgs.length - 1]}`} />
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    </>
+  );
 }
 
-export default App
+export default App;
