@@ -21,8 +21,8 @@ function App() {
     <>
       <div className="App">
         <div className="gallery">
-          {jpgs.map((jpg) => {
-            return <img src={`${serverRoot}/images/tn/${jpg}`} />;
+          {jpgs.map((jpg, i) => {
+            return <img src={`${serverRoot}/images/tn/${jpg}`} key={i} />;
           })}
         </div>
         <div className="viewer">

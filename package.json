@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "server": "http-server ./server/htdocs -p 3002 --cors",
-    "client": "cd ./client && yarn vite"
+    "client": "cd ./client && yarn vite",
+    "watcher": "cd ./server && nodemon watcher.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
     "chokidar": "^3.5.3",
     "dotenv": "^16.0.3",
     "http-server": "^14.1.1",
+    "nodemon": "^2.0.20",
     "sharp": "^0.31.3"
   }
 }

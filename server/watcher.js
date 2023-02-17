@@ -5,6 +5,8 @@ const path = require("path");
 const watchDir = process.env.WATCH_DIR;
 const fs = require("fs");
 
+console.log(`Watching ${watchDir}`);
+
 chokidar
   .watch(watchDir, {
     ignored: /\.nef|\.tmp|temp0/i,

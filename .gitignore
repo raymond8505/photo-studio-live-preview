@@ -2,3 +2,4 @@
 package-lock.json
 /server/htdocs/images/*
 .ENV
+/server/htdocs/jpgs.json

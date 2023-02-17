@@ -12,5 +12,5 @@ Watches a directory for new jpgs, displays them a little bit later in simple Rea
 2. install packages
 3. rename `server/example.ENV` to `.ENV`
 4. in `.ENV` set `WATCH_DIR` to your desired directory
-5. `yarn client` and `yarn server` in seperate terminals
+5. `yarn client`, `yarn server`, `yarn watcher` in seperate terminals
 6. go to http://localhost:5173/ in your browser
