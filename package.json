@@ -1,0 +1,25 @@
+{
+  "name": "photo-studio-live-preview",
+  "version": "1.0.0",
+  "description": "simple photo gallery, but it auto switches to the most recent photo added to a directory in the server. Use case is to rapidly review photos as you shoot them from a Nikon camera attached to the computer running this",
+  "main": "index.js",
+  "scripts": {
+    "server": "http-server ./server/htdocs -p 3002 --cors",
+    "client": "cd ./client && yarn vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raymond8505/photo-studio-live-preview.git"
+  },
+  "author": "Raymond Selzer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raymond8505/photo-studio-live-preview/issues"
+  },
+  "homepage": "https://github.com/raymond8505/photo-studio-live-preview#readme",
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "dotenv": "^16.0.3",
+    "http-server": "^14.1.1"
+  }
+}
