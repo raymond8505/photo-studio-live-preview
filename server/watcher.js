@@ -17,6 +17,8 @@ chokidar
     const serverRoot = process.mainModule.path;
     const fileName = path.basename(newFile);
 
+    console.log(" === Parsing", newFile, " ===");
+
     setTimeout(() => {
       sharp(newFile)
         .resize(1800)
@@ -26,12 +28,16 @@ chokidar
         .resize(200)
         .toFile(`${serverRoot}/htdocs/images/tn/${fileName}`);
 
+      console.log("Parsed");
+
       fs.readdir(watchDir, (err, files) => {
         const jpgs = files.filter((file) => file.search(/\.jpg$/i) > -1);
         fs.writeFileSync(
           `${serverRoot}/htdocs/jpgs.json`,
           JSON.stringify(jpgs)
         );
+
+        console.log("DB updated");
       });
     }, 5000);
   });
