@@ -4,7 +4,7 @@ I couldn't find a satisfactory solution online and thought it would be a fun pro
 
 # What do?!
 
-Watches a directory for new jpgs, displays them in real time in a simple React gallery.
+Watches a directory for new jpgs, displays them a little bit later in simple React gallery.
 
 # Ok, but how?
 
