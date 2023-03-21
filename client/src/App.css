@@ -3,30 +3,98 @@
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  background: #333;
+  color: white;
+  font-family: Roboto, Helvetica, _sans;
 }
 .gallery
 {
-  width: 100vw;
+  width: 100%;
   height: 10%;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  padding: 10px 5px;
 }
-.viewer
+/* width */
+*::-webkit-scrollbar {
+  height: 5px;
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+  background: rgb(255 255 255 / 0.65);
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 2px;
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.current-img
 {
   width: 100%;
   height: 90%;
-  
 }
 .gallery img
 {
   height: 100%;
-  margin-right: 10px;
+  margin: 0 5px;
+  border: 1px solid #666;
 }
-.viewer img
+.current-img img
 {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  object-position: center;
+  display: block;
+}
+.viewer
+{
+  width: 75vw;
+  height: 100vh;
+  flex-direction: column;
+  display: flex;
+}
+.checklists
+{
+  width: 25vw;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: #212121;
+  border-right: 1px solid black;
+}
+.checklists__dish
+{
+  height: calc(25vh - 1%);
+}
+.checklists__general
+{
+  height: calc(75vh - 1%);  
+}
+.checklists__dish,
+.checklists__general
+{
+  
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.checklists__dish ul,
+.checklists__general ul
+{
+  flex-grow: 1;
+  overflow: auto;
+}
+h2
+{
+  font-size: 1.5em;
 }

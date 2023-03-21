@@ -9,7 +9,9 @@ function App() {
 
   useEffect(() => {
     setInterval(() => {
-      fetch("//localhost:3002/jpgs.json").then((resp) => {
+      fetch(`//localhost:3002/jpgs.json`, {
+        cache: "no-store",
+      }).then((resp) => {
         resp.json().then((json) => {
           setJpgs(json);
         });
@@ -20,13 +22,25 @@ function App() {
   return (
     <>
       <div className="App">
-        <div className="gallery">
-          {jpgs.map((jpg, i) => {
-            return <img src={`${serverRoot}/images/tn/${jpg}`} key={i} />;
-          })}
+        <div className="checklists">
+          <div className="checklists__dish">
+            <h2>Dish</h2>
+            <ul></ul>
+          </div>
+          <div className="checklists__general">
+            <h2>General</h2>
+            <ul></ul>
+          </div>
         </div>
         <div className="viewer">
-          <img src={`${serverRoot}/images/lg/${jpgs[jpgs.length - 1]}`} />
+          <div className="gallery">
+            {jpgs.map((jpg, i) => {
+              return <img src={`${serverRoot}/images/tn/${jpg}`} key={i} />;
+            })}
+          </div>
+          <div className="current-img">
+            <img src={`${serverRoot}/images/lg/${jpgs[jpgs.length - 1]}`} />
+          </div>
         </div>
       </div>
     </>
