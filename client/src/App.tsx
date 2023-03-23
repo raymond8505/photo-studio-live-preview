@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { SyntheticEvent, useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./reset.css";
 import "./App.css";
@@ -34,6 +34,9 @@ function App() {
     setChecklist(JSON.parse(storedList) as ChecklistItem[]);
   }, []);
 
+  function handleChecklistKeyPress(e: SyntheticEvent, type: ChecklistItemType) {
+    console.log(e, type);
+  }
   return (
     <>
       <div className="App">
@@ -47,7 +50,13 @@ function App() {
                   <li key={i}>{item.name}</li>
                 ))}
               <li>
-                <input type="text" placeholder="New Item" />
+                <input
+                  type="text"
+                  placeholder="New Item"
+                  onKeyDown={(e) => {
+                    handleChecklistKeyPress(e, ChecklistItemType.DISH);
+                  }}
+                />
               </li>
             </ul>
           </div>
