@@ -1,10 +1,10 @@
 # Why, tho?
 
-I couldn't find a satisfactory solution online and thought it would be a fun project.
+I paid a lot of money for my camera and lenses. I'll be damned if Nikon is gonna siphon off more for software that doesn't work exactly how I want.
 
 # What do?!
 
-Watches a directory for new jpgs, displays them a little bit later in simple React gallery.
+Watches a directory for new jpgs, displays them a little bit later in simple React gallery. If your camera can shoot jpg (and RAW together) and has software to transfer them to a computer in real time, this aims to be a free and easy studio companion. I'll probably figure out how to do it with just RAW files eventually.
 
 # Ok, but how?
 

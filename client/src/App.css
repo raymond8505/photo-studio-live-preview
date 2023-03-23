@@ -72,6 +72,16 @@
   background-color: #212121;
   border-right: 1px solid black;
 }
+.checklists input
+{
+  background: transparent;
+  color: white;
+  border: none;
+  padding: .2em .4em .2em 0;
+  border-bottom: 1px solid #999;
+  width: 100%;
+  box-sizing: border-box;
+}
 .checklists__dish
 {
   height: calc(25vh - 1%);
