@@ -9,7 +9,7 @@ Watches a directory for new jpgs, displays them a little bit later in simple Rea
 # Ok, but how?
 
 1. clone repo / download zip
-2. install packages
+2. install root packages and client packages
 3. rename `server/example.ENV` to `.ENV`
 4. in `.ENV` set `WATCH_DIR` to your desired directory
 5. `yarn client`, `yarn server`, `yarn watcher` in seperate terminals
