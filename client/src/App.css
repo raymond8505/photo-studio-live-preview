@@ -19,6 +19,7 @@
 /* width */
 *::-webkit-scrollbar {
   height: 5px;
+  width: 5px;
 }
 
 /* Track */
@@ -98,6 +99,7 @@
 {
   flex-grow: 1;
   overflow: auto;
+  padding-right: .5em;
 }
 .checklist:not(:last-child)
 {
@@ -140,4 +142,8 @@ h2
 .clear-btn
 {
   font-size: .8em;
+}
+.checklist
+{
+  max-height: calc(50vh - 3em);
 }

@@ -1,5 +1,5 @@
 /node_modules
 package-lock.json
-/server/htdocs/images/*
+/server/htdocs/images/*/*.*
 .ENV
 /server/htdocs/jpgs.json
