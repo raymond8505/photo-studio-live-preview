@@ -19,12 +19,12 @@ chokidar
 
     console.log(" === Parsing", newFile, " ===");
 
-    setTimeout(() => {
-      sharp(newFile)
+    setTimeout(async () => {
+      await sharp(newFile)
         .resize(1800)
         .toFile(`${serverRoot}/htdocs/images/lg/${fileName}`);
 
-      sharp(newFile)
+      await sharp(newFile)
         .resize(200)
         .toFile(`${serverRoot}/htdocs/images/tn/${fileName}`);
 
