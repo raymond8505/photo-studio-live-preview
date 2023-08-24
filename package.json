@@ -6,7 +6,8 @@
   "scripts": {
     "server": "http-server ./server/htdocs -p 3002 --cors",
     "client": "cd ./client && yarn vite",
-    "watcher": "cd ./server && node watcher.js"
+    "watcher": "cd ./server && node watcher.js",
+    "start": "start cmd /k yarn server & start cmd /k yarn client & start cmd /k yarn watcher"
   },
   "repository": {
     "type": "git",
